@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: brazzersv1
+    env: docker
+    plan: starter
+    autoDeploy: true
+    repo: "https://github.com/latifsdg/latifsdg"
+    branch: main
+    dockerCommand: "docker build -t brazzersv1 ."
+    startCommand: "npm start"
