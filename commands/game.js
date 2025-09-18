@@ -9,26 +9,10 @@ function getMedia() {
 }
 
 module.exports = {
-  name: 'menu',
+  name: 'game',
   async execute({ msg }) {
     const media = getMedia();
-    const text = `
-🌟 *MENU - Brazzers V1* 🌟
-
-🔥 !help - Aide
-🔥 !info - Info bot
-🔥 !kickall - Kick all (admin)
-🔥 !promote - Promouvoir
-🔥 !demote - Rétrograder
-🔥 !spam - Spam
-🔥 !antilink - Antilink
-🔥 !game - Jeu
-🔥 !dsmots - Devine le mot
-🔥 !vv - Visiteurs uniques
-
-👑 Créateur : Influenceur 
-🤖 Bot : Brazzers V1
-    `;
+    const text = `🎲 Jeu simple : tapez !dsmots pour deviner un mot.`;
     if (media) {
       await msg.reply(media, undefined, { caption: text });
     } else {

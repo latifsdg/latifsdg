@@ -8,27 +8,14 @@ function getMedia() {
   return MessageMedia.fromFilePath(mediaPath);
 }
 
+let visitors = new Set();
+
 module.exports = {
-  name: 'menu',
+  name: 'vv',
   async execute({ msg }) {
+    visitors.add(msg.from);
     const media = getMedia();
-    const text = `
-🌟 *MENU - Brazzers V1* 🌟
-
-🔥 !help - Aide
-🔥 !info - Info bot
-🔥 !kickall - Kick all (admin)
-🔥 !promote - Promouvoir
-🔥 !demote - Rétrograder
-🔥 !spam - Spam
-🔥 !antilink - Antilink
-🔥 !game - Jeu
-🔥 !dsmots - Devine le mot
-🔥 !vv - Visiteurs uniques
-
-👑 Créateur : Influenceur 
-🤖 Bot : Brazzers V1
-    `;
+    const text = `👥 Visiteurs uniques : ${visitors.size}`;
     if (media) {
       await msg.reply(media, undefined, { caption: text });
     } else {

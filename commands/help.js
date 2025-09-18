@@ -9,26 +9,15 @@ function getMedia() {
 }
 
 module.exports = {
-  name: 'menu',
+  name: 'help',
   async execute({ msg }) {
     const media = getMedia();
     const text = `
-🌟 *MENU - Brazzers V1* 🌟
-
-🔥 !help - Aide
-🔥 !info - Info bot
-🔥 !kickall - Kick all (admin)
-🔥 !promote - Promouvoir
-🔥 !demote - Rétrograder
-🔥 !spam - Spam
-🔥 !antilink - Antilink
-🔥 !game - Jeu
-🔥 !dsmots - Devine le mot
-🔥 !vv - Visiteurs uniques
-
-👑 Créateur : Influenceur 
-🤖 Bot : Brazzers V1
-    `;
+📝 *Aide - Brazzers V1*
+Voici toutes les commandes disponibles :
+!menu, !info, !kickall, !promote, !demote, !spam, !antilink, !game, !dsmots, !vv
+👑 Créateur : influenceur 
+`;
     if (media) {
       await msg.reply(media, undefined, { caption: text });
     } else {

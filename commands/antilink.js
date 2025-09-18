@@ -9,26 +9,13 @@ function getMedia() {
 }
 
 module.exports = {
-  name: 'menu',
+  name: 'antilink',
   async execute({ msg }) {
+    const chat = await msg.getChat();
+    if (!chat.isGroup) return msg.reply('⚠️ Cette commande est pour les groupes.');
+
     const media = getMedia();
-    const text = `
-🌟 *MENU - Brazzers V1* 🌟
-
-🔥 !help - Aide
-🔥 !info - Info bot
-🔥 !kickall - Kick all (admin)
-🔥 !promote - Promouvoir
-🔥 !demote - Rétrograder
-🔥 !spam - Spam
-🔥 !antilink - Antilink
-🔥 !game - Jeu
-🔥 !dsmots - Devine le mot
-🔥 !vv - Visiteurs uniques
-
-👑 Créateur : Influenceur 
-🤖 Bot : Brazzers V1
-    `;
+    const text = `🚫 Antilink activé. Tout lien sera supprimé automatiquement.`;
     if (media) {
       await msg.reply(media, undefined, { caption: text });
     } else {

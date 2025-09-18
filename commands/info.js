@@ -9,25 +9,14 @@ function getMedia() {
 }
 
 module.exports = {
-  name: 'menu',
+  name: 'info',
   async execute({ msg }) {
     const media = getMedia();
     const text = `
-🌟 *MENU - Brazzers V1* 🌟
-
-🔥 !help - Aide
-🔥 !info - Info bot
-🔥 !kickall - Kick all (admin)
-🔥 !promote - Promouvoir
-🔥 !demote - Rétrograder
-🔥 !spam - Spam
-🔥 !antilink - Antilink
-🔥 !game - Jeu
-🔥 !dsmots - Devine le mot
-🔥 !vv - Visiteurs uniques
-
-👑 Créateur : Influenceur 
-🤖 Bot : Brazzers V1
+ℹ️ *Info - Brazzers V1*
+Ce bot est développé par Influenceur.
+Commandes disponibles avec !menu
+🤖 Version : V1
     `;
     if (media) {
       await msg.reply(media, undefined, { caption: text });
