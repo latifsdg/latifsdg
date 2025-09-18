@@ -1,0 +1,14 @@
+{
+  "name": "brazzersv1",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp Brazzers V1",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.24.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
